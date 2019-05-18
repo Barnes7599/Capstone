@@ -21,7 +21,10 @@ batting$SLG <- ((1 * batting$X1B) + (2 * batting$`2B`) + (3 * batting$`3B`) + (4
 
 str(batting)
 
-batting <- subset(batting, yearID >= 1985)
+batting <- batting %>% 
+    filter(yearID >= 1985)
+    # or subset(batting, yearID >= 1985)
+
 summary(batting)
 
 combo <- merge(batting, salary, by = c('playerID', 'yearID'))
