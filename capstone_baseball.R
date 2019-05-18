@@ -41,7 +41,7 @@ combo <- inner_join(batting, salary, by = c("playerID", "yearID"))
 #Verifing proper join
 summary(combo)
 
-#filtering to view onlt the lost players
+#filtering to view onlt the lost players to understand what we need to replace
 lost_players <- combo %>% 
     filter(playerID %in% c('damonjo01', 'giambja01', 'saenzol01'), yearID == 2001)
     # or...subset(combo, playerID %in% c('damonjo01', 'giambja01', 'saenzol01')) 
